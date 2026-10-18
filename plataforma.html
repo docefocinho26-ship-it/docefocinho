@@ -196,7 +196,7 @@
     </form>
     <div class="hero-stats">
       <div><b>+12 mil</b><span>pets cuidados</span></div>
-      <div><b>4,9 ⭐</b><span>avaliação média</span></div>
+      <div><b>💗</b><span>cuidado com amor</span></div>
       <div><b>✓</b><span>sitters verificados</span></div>
       <div><b>100%</b><span>foco local e personalizado</span></div>
     </div>
@@ -215,12 +215,12 @@
 
   <section class="wrap" id="buscar" style="padding-top:10px">
     <h2 class="title">Sitters em destaque 🌟</h2>
-    <p class="sub">Perfis verificados, com avaliações reais de tutores</p>
+    <p class="sub">Perfis verificados da nossa região</p>
     <div class="filters">
       <div class="f"><label>📍 Cidade</label><select id="f-city" onchange="toggleOther('f-city','f-city-other');renderSitters()"><option value="Pouso Alegre - MG">Pouso Alegre</option><option value="outra">Outra cidade...</option><option value="">Todas</option></select><input id="f-city-other" class="hidden" placeholder="Digite sua cidade - UF" style="margin-top:8px" oninput="renderSitters()"></div>
       <div class="f"><label>Serviço</label><select id="f-service" onchange="renderSitters()"><option value="">Todos</option><option>Hospedagem</option><option>Creche</option><option>Passeio</option><option>Visita em casa</option></select></div>
       <div class="f"><label>Preço máximo/dia</label><select id="f-price" onchange="renderSitters()"><option value="999">Qualquer valor</option><option value="40">Até R$ 40</option><option value="60">Até R$ 60</option><option value="80">Até R$ 80</option></select></div>
-      <div class="f"><label>Ordenar</label><select id="f-sort" onchange="renderSitters()"><option value="rating">Melhor avaliados</option><option value="low">Menor preço</option><option value="high">Maior preço</option></select></div>
+      <div class="f"><label>Ordenar</label><select id="f-sort" onchange="renderSitters()"><option value="rating">Destaques</option><option value="low">Menor preço</option><option value="high">Maior preço</option></select></div>
     </div>
     <div class="grid" id="sitterGrid"></div>
     <div class="empty hidden" id="noSitters">😿 Nenhum sitter encontrado com esses filtros. Tente outra cidade ou serviço.</div>
@@ -230,7 +230,7 @@
     <h2 class="title">Como funciona</h2>
     <p class="sub">Em 3 passos seu pet está cuidado</p>
     <div class="steps">
-      <div class="step"><div class="num">1</div><h3>Encontre e compare</h3><p style="color:var(--muted);font-size:14px;margin-top:6px">Busque por cidade, veja fotos, preços, avaliações e converse com o sitter antes de reservar.</p></div>
+      <div class="step"><div class="num">1</div><h3>Encontre e compare</h3><p style="color:var(--muted);font-size:14px;margin-top:6px">Busque por cidade, veja fotos e preços e converse com o sitter antes de reservar.</p></div>
       <div class="step"><div class="num">2</div><h3>Reserve e pague online</h3><p style="color:var(--muted);font-size:14px;margin-top:6px">Agende as datas e pague com Pix ou cartão direto na plataforma, com garantia Doce Focinho.</p></div>
       <div class="step"><div class="num">3</div><h3>Acompanhe em tempo real</h3><p style="color:var(--muted);font-size:14px;margin-top:6px">Receba fotos, vídeos, rota do passeio e um relatório completo ao final de cada dia.</p></div>
     </div>
@@ -240,16 +240,6 @@
       <div><div class="ico">🏥</div><b>Cobertura veterinária</b><p>Emergências cobertas durante toda a reserva</p></div>
       <div><div class="ico">💬</div><b>Suporte 24h</b><p>Time brasileiro pronto para ajudar a qualquer hora</p></div>
       <div><div class="ico">↩️</div><b>Reembolso garantido</b><p>Cancelou com antecedência? Seu dinheiro de volta</p></div>
-    </div>
-  </section>
-
-  <section class="wrap" style="padding-top:0">
-    <h2 class="title">Quem já usou, recomenda 💚</h2>
-    <p class="sub">Avaliações reais de tutores na plataforma</p>
-    <div class="rev-grid">
-      <div class="rev"><div class="stars">★★★★★</div><p>"Viajei 10 dias e recebi fotos do Thor todos os dias. Ele voltou feliz e cheiroso. Não uso outra coisa!"</p><div class="who"><div class="avatar" style="background:#F06595">M</div><div><b>Mariana</b><br><span class="rating-txt">Pouso Alegre - MG · Hospedagem</span></div></div></div>
-      <div class="rev"><div class="stars">★★★★★</div><p>"O passeio com GPS me deixou tranquila no trabalho. A Luna adora a tia Carla, já virou cliente fiel."</p><div class="who"><div class="avatar" style="background:#D6336C">R</div><div><b>Ricardo Almeida</b><br><span class="rating-txt">Pouso Alegre - MG · Passeio</span></div></div></div>
-      <div class="rev"><div class="stars">★★★★★</div><p>"Minha gata é medrosa e não sai de casa. As visitas em casa foram perfeitas, com relatório detalhado."</p><div class="who"><div class="avatar" style="background:#B565D8">A</div><div><b>Ana Paula Ribeiro</b><br><span class="rating-txt">Itajubá - MG · Visita em casa</span></div></div></div>
     </div>
   </section>
 
@@ -397,7 +387,6 @@ function renderSitters(){
       <div><b style="font-size:17px">${s.name}</b><br><span class="rating-txt">📍 ${s.city}</span><br>
       <span class="badge verified">✓ Verificado</span> <span class="badge">${s.jobs}+ cuidados</span></div></div>
     <div class="sitter-body">
-      <div><span class="stars">${stars(s.rating)}</span> <b>${String(s.rating).replace('.',',')}</b> <span class="rating-txt">(${s.reviews} avaliações)</span></div>
       <p style="margin-top:8px">${s.bio}</p>
       <div class="tags">${s.services.map(x=>`<span class="tag">${SERVICE_ICON[x]} ${x}</span>`).join('')}</div>
       <div class="sitter-foot"><div class="price"><b>${money(s.price)}</b> <span>/dia</span></div>
@@ -417,7 +406,7 @@ function openSitter(id){
   openModal(`
    <div style="display:flex;gap:16px;align-items:center">${avatarHTML(s.name,76)}
      <div><h3 style="margin:0">${s.name}</h3><span class="rating-txt">📍 ${s.city} · ${s.exp} de experiência</span><br>
-     <span class="stars">${stars(s.rating)}</span> <b>${String(s.rating).replace('.',',')}</b> <span class="rating-txt">· ${s.reviews} avaliações · ${s.jobs} cuidados concluídos</span></div></div>
+     <span class="rating-txt">${s.jobs} cuidados concluídos</span></div></div>
    <div class="summary" style="margin-bottom:6px"><b>Sobre:</b> ${s.bio}<br><b>Atende:</b> ${s.pets}<br><b>Serviços:</b> ${s.services.join(' · ')}</div>
    <label>Serviço desejado</label><select id="b-service">${s.services.map(x=>`<option>${x}</option>`).join('')}</select>
    <div class="row2"><div><label>Data de início</label><input type="date" id="b-start" value="2026-10-25"></div>
@@ -516,7 +505,6 @@ function bookingCard(b,isSitter){
     ${isSitter&&b.status==='andamento'?`<button class="btn btn-coral btn-sm" onclick="setStatus(${b.id},'concluida')">Concluir + relatório</button>`:''}
     ${!isSitter&&b.status==='pendente'?`<button class="btn btn-teal btn-sm" onclick="fakeConfirm(${b.id})">Simular confirmação do sitter</button>`:''}
     ${!isSitter&&(b.status==='confirmada')?`<button class="btn btn-teal btn-sm" onclick="setStatus(${b.id},'andamento')">Simular início do cuidado</button>`:''}
-    ${!isSitter&&b.status==='concluida'?`<button class="btn btn-coral btn-sm" onclick="openReview(${b.id})">⭐ Avaliar</button>`:''}
     </div></div>`;
 }
 function trackingHTML(){
@@ -535,12 +523,6 @@ function addPet(){const n=$('p-name').value.trim();if(!n)return toast('Informe o
 function saveProfile(){session.name=$('pf-name').value.trim()||session.name;
   if(session.role==='sitter'&&session.sitterProfile){session.sitterProfile.bio=$('pf-bio').value;session.sitterProfile.price=+$('pf-price').value||50;session.sitterProfile.name=session.name}
   const i=users.findIndex(u=>u.email===session.email);if(i>=0)users[i]=session;store.set('users',users);store.set('session',session);renderAuth();renderDash();toast('✅ Perfil salvo!')}
-function openReview(id){const b=bookings.find(x=>x.id===id);
- openModal(`<h3>Avaliar ${b.sitterName.split(' ')[0]} ⭐</h3><p class="hint">Como foi o cuidado com ${b.pet}?</p>
- <label>Sua nota</label><select id="r-stars"><option>★★★★★ (5)</option><option>★★★★ (4)</option><option>★★★ (3)</option></select>
- <label>Comentário</label><textarea id="r-text" rows="3" placeholder="Conte como foi a experiência..."></textarea>
- <button class="btn btn-coral full" onclick="submitReview()">Publicar avaliação</button>`)}
-function submitReview(){closeModal();toast('⭐ Avaliação publicada! Obrigado pelo feedback.')}
 
 /* ================= VIRAR SITTER ================= */
 function openBecomeSitter(){
