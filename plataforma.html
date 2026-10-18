@@ -176,7 +176,7 @@
     <div class="paw" style="bottom:30px;right:8%">🐾</div>
     <div class="paw" style="top:110px;right:20%;font-size:36px">🐾</div>
     <h1>Seu pet cuidado com <em>amor</em>, pertinho de você 💗</h1>
-    <p>Pet sitters verificados para hospedagem, creche, passeios e visitas em casa. Reserve em minutos e acompanhe tudo com fotos em tempo real.</p>
+    <p>Pet sitters verificados para creche, passeios e visitas em casa. Reserve em minutos e acompanhe tudo com fotos em tempo real.</p>
     <form class="searchbar" onsubmit="doSearch(event)">
       <div><label>📍 Cidade</label>
         <select id="s-city" onchange="toggleOther('s-city','s-city-other')">
@@ -187,7 +187,7 @@
       <div><label>🐶 Serviço</label>
         <select id="s-service">
           <option value="">Todos os serviços</option>
-          <option>Hospedagem</option><option>Creche</option>
+          <option>Creche</option>
           <option>Passeio</option><option>Visita em casa</option>
         </select></div>
       <div><label>🐾 Tipo de pet</label>
@@ -205,7 +205,6 @@
     <h2 class="title">Nossos serviços</h2>
     <p class="sub">Escolha o cuidado ideal para a rotina do seu pet</p>
     <div class="services">
-      <div class="svc" onclick="quickService('Hospedagem')"><div class="ico">🏠</div><h3>Hospedagem</h3><p>Seu pet dorme na casa do sitter, como se fosse a segunda casa dele.</p><div class="from">a partir de R$ 60/noite</div></div>
       <div class="svc" onclick="quickService('Creche')"><div class="ico">🎾</div><h3>Creche</h3><p>Um dia inteiro de brincadeiras, socialização e sonecas supervisionadas.</p><div class="from">a partir de R$ 45/dia</div></div>
       <div class="svc" onclick="quickService('Passeio')"><div class="ico">🦮</div><h3>Passeio</h3><p>Passeios com rota por GPS e relatório com fotos ao final de cada saída.</p><div class="from">a partir de R$ 25/passeio</div></div>
       <div class="svc" onclick="quickService('Visita em casa')"><div class="ico">🏡</div><h3>Visita em casa</h3><p>O sitter vai até sua casa: comida, água, brincadeiras e muito carinho.</p><div class="from">a partir de R$ 35/visita</div></div>
@@ -223,7 +222,7 @@
     <div style="height:26px"></div>
     <div class="trust">
       <div><div class="ico">🛡️</div><b>Identidade verificada</b><p>Documento e antecedentes checados de todos os sitters</p></div>
-      <div><div class="ico">🏥</div><b>Cobertura veterinária</b><p>Emergências cobertas durante toda a reserva</p></div>
+      
       <div><div class="ico">💬</div><b>Suporte 24h</b><p>Time brasileiro pronto para ajudar a qualquer hora</p></div>
       <div><div class="ico">↩️</div><b>Reembolso garantido</b><p>Cancelou com antecedência? Seu dinheiro de volta</p></div>
     </div>
@@ -266,16 +265,16 @@
 /* ================= DADOS ================= */
 const COLORS=['#D6336C','#F06595','#B565D8','#E8437D','#C2255C','#FA8FB1','#9D4EDD','#A4133C'];
 const SITTERS=[
- {id:1,name:'Carla Mendes',city:'Pouso Alegre - MG',price:55,rating:4.9,reviews:127,services:['Hospedagem','Passeio','Visita em casa'],bio:'Veterinária aposentada e apaixonada por cães há 20 anos. Casa com quintal grande, sem grades e com muito espaço para brincar.',jobs:340,pets:'Cães e gatos',exp:'8 anos'},
- {id:2,name:'João',city:'Pouso Alegre - MG',price:70,rating:5.0,reviews:203,services:['Hospedagem','Creche'],bio:'Adestrador certificado. Trabalho com socialização e gasto de energia. Seu pet volta cansado e feliz!',jobs:510,pets:'Cães (todos os portes)',exp:'6 anos'},
+ {id:1,name:'Carla Mendes',city:'Pouso Alegre - MG',price:55,rating:4.9,reviews:127,services:['Passeio','Visita em casa'],bio:'Veterinária aposentada e apaixonada por cães há 20 anos. Casa com quintal grande, sem grades e com muito espaço para brincar.',jobs:340,pets:'Cães e gatos',exp:'8 anos'},
+ {id:2,name:'João',city:'Pouso Alegre - MG',price:70,rating:5.0,reviews:203,services:['Creche'],bio:'Adestrador certificado. Trabalho com socialização e gasto de energia. Seu pet volta cansado e feliz!',jobs:510,pets:'Cães (todos os portes)',exp:'6 anos'},
  {id:3,name:'Fernanda Lima',city:'Santa Rita do Sapucaí - MG',price:65,rating:4.8,reviews:98,services:['Creche','Passeio'],bio:'Bióloga e mãe de 3 vira-latas. Passeios diários na praia e trilhas leves para cães ativos.',jobs:230,pets:'Cães',exp:'4 anos'},
  {id:4,name:'Lucas Ferreira',city:'Pouso Alegre - MG',price:45,rating:4.9,reviews:156,services:['Visita em casa','Passeio'],bio:'Especialista em gatos! Visitas calmas, sem estresse, com brincadeiras e caixa de areia impecável.',jobs:420,pets:'Gatos e cães pequenos',exp:'5 anos'},
- {id:5,name:'Beatriz',city:'Itajubá - MG',price:60,rating:4.9,reviews:88,services:['Hospedagem','Creche','Visita em casa'],bio:'Casa térrea com jardim cercado e câmera para o tutor acompanhar ao vivo. Aceito pets idosos e com medicação.',jobs:190,pets:'Cães e gatos',exp:'7 anos'},
+ {id:5,name:'Beatriz',city:'Itajubá - MG',price:60,rating:4.9,reviews:88,services:['Creche','Visita em casa'],bio:'Casa térrea com jardim cercado e câmera para o tutor acompanhar ao vivo. Aceito pets idosos e com medicação.',jobs:190,pets:'Cães e gatos',exp:'7 anos'},
  {id:6,name:'Rafael Santos',city:'Cambuí - MG',price:38,rating:4.7,reviews:64,services:['Passeio'],bio:'Corredor de rua e amante de cães grandes. Passeios longos de 1h com corrida leve para gastar energia.',jobs:300,pets:'Cães médios e grandes',exp:'3 anos'},
- {id:7,name:'Juliana',city:'Santa Rita do Sapucaí - MG',price:75,rating:5.0,reviews:177,services:['Hospedagem','Creche'],bio:'Hotelzinho pet familiar: no máximo 4 hóspedes por vez, dormindo dentro de casa, no sofá e na cama se quiser!',jobs:460,pets:'Cães e gatos',exp:'9 anos'},
- {id:8,name:'Thiago',city:'São Sebastião da Bela Vista - MG',price:50,rating:4.8,reviews:112,services:['Hospedagem','Visita em casa','Passeio'],bio:'Trabalho de casa e fico o dia todo com os pets. Envio fotos de hora em hora e faço videochamada quando quiser.',jobs:275,pets:'Cães e gatos',exp:'5 anos'},
+ {id:7,name:'Juliana',city:'Santa Rita do Sapucaí - MG',price:75,rating:5.0,reviews:177,services:['Creche'],bio:'Hotelzinho pet familiar: no máximo 4 hóspedes por vez, dormindo dentro de casa, no sofá e na cama se quiser!',jobs:460,pets:'Cães e gatos',exp:'9 anos'},
+ {id:8,name:'Thiago',city:'São Sebastião da Bela Vista - MG',price:50,rating:4.8,reviews:112,services:['Visita em casa','Passeio'],bio:'Trabalho de casa e fico o dia todo com os pets. Envio fotos de hora em hora e faço videochamada quando quiser.',jobs:275,pets:'Cães e gatos',exp:'5 anos'},
 ];
-const SERVICE_ICON={'Hospedagem':'🏠','Creche':'🎾','Passeio':'🦮','Visita em casa':'🏡'};
+const SERVICE_ICON={'Creche':'🎾','Passeio':'🦮','Visita em casa':'🏡'};
 const $=id=>document.getElementById(id);
 const store={get(k,d){try{return JSON.parse(localStorage.getItem('pc_'+k))??d}catch(e){return d}},set(k,v){localStorage.setItem('pc_'+k,JSON.stringify(v))}};
 let session=store.get('session',null);
@@ -352,7 +351,7 @@ function demoLogin(){
   let u=users.find(x=>x.email==='demo@docefocinho.com.br');
   if(!u){u={name:'Tutor Demo',email:'demo@docefocinho.com.br',pass:'demo',role:'tutor',sitterId:null};users.push(u);store.set('users',users);
     pets[u.email]=[{name:'Thor',type:'Cachorro',breed:'Golden Retriever',age:'3 anos',notes:'Adora bolinha. Toma remédio de alergia às 18h.'}];store.set('pets',pets);
-    if(!bookings.find(b=>b.demo)){bookings.push({id:Date.now(),demo:true,tutorEmail:u.email,tutorName:u.name,sitterId:1,sitterName:'Carla Mendes',service:'Hospedagem',pet:'Thor',start:'2026-10-20',end:'2026-10-24',days:4,price:55,total:220,pay:'Pix',status:'andamento'});store.set('bookings',bookings)}
+    if(!bookings.find(b=>b.demo)){bookings.push({id:Date.now(),demo:true,tutorEmail:u.email,tutorName:u.name,sitterId:1,sitterName:'Carla Mendes',service:'Creche',pet:'Thor',start:'2026-10-20',end:'2026-10-24',days:4,price:55,total:220,pay:'Pix',status:'andamento'});store.set('bookings',bookings)}
   }
   session=u;store.set('session',u);closeModal();renderAuth();go('dash');toast('Você entrou na conta de demonstração 🐾');
 }
@@ -492,7 +491,7 @@ function openBecomeSitter(){
   if(!session){session=null;openAuth('register');setTimeout(()=>{const r=$('a-role');if(r)r.value='sitter'},50);toast('Crie sua conta como pet sitter para continuar 💚');return}
   openModal(`<h3>💚 Cadastro de Pet Sitter</h3><p class="hint">Complete seu perfil para aparecer no marketplace e receber pedidos.</p>
    <label>Cidade onde atende</label><select id="bs-city" onchange="toggleOther('bs-city','bs-city-other')"><option value="Pouso Alegre - MG">Pouso Alegre</option><option value="outra">Outra cidade...</option></select><input id="bs-city-other" class="hidden" placeholder="Digite sua cidade - UF" style="margin-top:8px">
-   <label>Serviços que oferece</label><select id="bs-services" multiple size="4" style="height:auto"><option selected>Hospedagem</option><option>Creche</option><option selected>Passeio</option><option>Visita em casa</option></select>
+   <label>Serviços que oferece</label><select id="bs-services" multiple size="4" style="height:auto"><option>Creche</option><option selected>Passeio</option><option>Visita em casa</option></select>
    <div class="row2"><div><label>Preço por dia (R$)</label><input id="bs-price" type="number" value="55"></div><div><label>Experiência</label><input id="bs-exp" placeholder="Ex.: 3 anos"></div></div>
    <label>Sobre você e sua casa</label><textarea id="bs-bio" rows="3" placeholder="Conte sua experiência, espaço, rotina..."></textarea>
    <div class="ok">🛡️ Verificação de identidade, entrevista e curso de primeiros socorros pet são feitos pela equipe Doce Focinho antes da ativação.</div>
